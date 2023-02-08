@@ -10,7 +10,7 @@ const createUser = async(req, res) => {
         res.status(201).json('User created successfully')
     }
     catch(err){
-        res.status(500).json(err)
+        res.status(500).json({err: err.message})
     }
 }
 
@@ -23,7 +23,7 @@ const login = async(req, res) => {
         res.status(200).json(token)
     }
     catch(err){
-        res.status(500).json(err)
+        res.status(500).json({err: err.message})
     }
 }
 

@@ -1,9 +1,9 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { User } = require('../database/models')
+const { User } = require('../../database/models')
 
 const createUser = async(username, password) => {
-    const user = User.findOne({ where: { username } })
+    const user = await User.findOne({ where: { username } })
     if (user) {
         throw new Error('Username already exists')
     }

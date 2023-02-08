@@ -6,6 +6,8 @@ const port = 8080
 
 const authRouter = require('./src/routes/authRoutes')
 
+app.use(express.json())
+
 app.use('/', authRouter)
 
 app.listen(port, () => {
